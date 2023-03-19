@@ -11,7 +11,7 @@ public class CreateRoleTable : Migration
             .WithColumn("id").AsInt32().PrimaryKey().Identity().NotNullable()
             .WithColumn("name").AsString(size: 256).NotNullable()
             .WithColumn("createdAt").AsDateTime().WithDefaultValue(DateTime.UtcNow)
-            .WithColumn("DeletedAt").AsDateTime().Nullable();
+            .WithColumn("deletedAt").AsDateTime().Nullable();
     }
 
     public override void Down()
