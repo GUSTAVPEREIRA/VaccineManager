@@ -54,7 +54,7 @@ public static class SwaggerConfiguration
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
             c.IncludeXmlComments(xmlPath);
 
-            xmlPath = Path.Combine(AppContext.BaseDirectory, "Core.xml");
+            xmlPath = Path.Combine(AppContext.BaseDirectory, "Application.xml");
             c.IncludeXmlComments(xmlPath);
         });
 

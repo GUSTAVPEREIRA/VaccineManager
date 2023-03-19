@@ -10,8 +10,8 @@ public class CreateRoleTable : Migration
         Create.Table("roles")
             .WithColumn("id").AsInt32().PrimaryKey().Identity().NotNullable()
             .WithColumn("name").AsString(size: 256).NotNullable()
-            .WithColumn("value").AsString().NotNullable()
-            .WithColumn("enabled").AsBoolean().WithDefaultValue(false);
+            .WithColumn("createdAt").AsDateTime().WithDefaultValue(DateTime.UtcNow)
+            .WithColumn("DeletedAt").AsDateTime().Nullable();
     }
 
     public override void Down()
