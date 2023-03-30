@@ -58,7 +58,9 @@ public class RoleRepositoryTest : IDisposable
             Name = new Faker().Lorem.Letter(256)
         };
 
-        await Assert.ThrowsAsync<NotFoundDataException>(() => _roleRepository.UpdateRoleAsync(updateRoleRequest));
+        var exception = await Assert.ThrowsAsync<NotFoundDataException>(() => _roleRepository.UpdateRoleAsync(updateRoleRequest));
+
+        exception.Message.Should().Be($"Not found item {updateRoleRequest.Id} by search key");
     }
 
     [Fact]
