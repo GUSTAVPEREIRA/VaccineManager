@@ -9,8 +9,9 @@ public class CreateRoleTable : Migration
     {
         Create.Table("roles")
             .WithColumn("id").AsInt32().PrimaryKey().Identity().NotNullable()
-            .WithColumn("name").AsString(size: 256).NotNullable()
+            .WithColumn("name").AsString(size: 256).NotNullable().Unique()
             .WithColumn("createdAt").AsDateTime().WithDefaultValue(DateTime.UtcNow)
+            .WithColumn("updatedAt").AsDateTime().WithDefaultValue(DateTime.UtcNow)
             .WithColumn("deletedAt").AsDateTime().Nullable();
     }
 

@@ -9,7 +9,8 @@ public static class MigrationConfiguration
     {
         return new[]
         {
-            typeof(CreateRoleTable).Assembly
+            typeof(CreateRoleTable).Assembly,
+            typeof(CreateUserTable).Assembly
         };
     }
 }
