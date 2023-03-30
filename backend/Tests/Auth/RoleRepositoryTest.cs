@@ -70,7 +70,7 @@ public class RoleRepositoryTest : IDisposable
 
         roleResponse.Should().BeEquivalentTo(result);
     }
-    
+
     public void Dispose()
     {
         DatabaseConfiguration.CreateOrRemoveMigrations(false, DatabaseName);
